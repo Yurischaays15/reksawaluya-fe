@@ -109,19 +109,21 @@ class _PoliklinikViewState extends State<PoliklinikView> {
                 );
                 _fetchPolis();
               },
-              backgroundColor: Colors.green,
-              child: const Icon(Icons.add),
+              backgroundColor: Colors.blue[700],
+              child: const Icon(Icons.add_outlined),
             )
           : null,
       body: Padding(
         padding: const EdgeInsets.all(12),
-        child: Column(
+        child: SingleChildScrollView(
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ..._poliMenus,
           ],
         ),
       ),
+    ),
     );
   }
 }

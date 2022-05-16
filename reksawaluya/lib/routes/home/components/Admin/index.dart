@@ -21,7 +21,7 @@ class AdminView extends StatelessWidget {
             children: [
               MenuBox(
                 destination: const DataPasienView(),
-                  text: 'Pasien',
+                  text: 'Pasien\n',
                   icon: LineIcon.personEnteringBooth(
                     size: 60,
                   )),
