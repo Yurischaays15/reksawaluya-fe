@@ -13,6 +13,7 @@ class PoliklinikView extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
+          Image.asset('assets/images/logo.png'),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

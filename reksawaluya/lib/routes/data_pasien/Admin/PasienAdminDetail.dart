@@ -206,7 +206,7 @@ class _PasienAdminDetailViewState extends State<PasienAdminDetailView> {
                 children: [
                 ElevatedButton(onPressed: _showMyDialog, child: const Text('Hapus Data')),
                 const SizedBox(width: 8,),
-                ElevatedButton(onPressed: _doUbah, child: const Text('Ubah'))
+                ElevatedButton(onPressed: _doUbah, child: const Text('Ubah Data'))
 
               ],)
             ],
