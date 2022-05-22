@@ -47,6 +47,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
             Padding(
                 padding: const EdgeInsets.all(8),
                 child: TextFormField(
+                    obscureText: true,
                     textInputAction: TextInputAction.next,
                     onChanged: (text) {
                       _oldPass = text;
@@ -61,6 +62,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
             Padding(
                 padding: const EdgeInsets.all(8),
                 child: TextFormField(
+                    obscureText: true,
                     textInputAction: TextInputAction.next,
                     onChanged: (text) {
                       _newPass = text;

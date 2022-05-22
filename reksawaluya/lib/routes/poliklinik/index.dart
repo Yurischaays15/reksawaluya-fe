@@ -109,7 +109,7 @@ class _PoliklinikViewState extends State<PoliklinikView> {
                 );
                 _fetchPolis();
               },
-              backgroundColor: Colors.blue[700],
+              backgroundColor: Colors.green,
               child: const Icon(Icons.add_outlined),
             )
           : null,

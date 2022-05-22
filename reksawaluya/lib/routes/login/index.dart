@@ -57,11 +57,10 @@ class _LoginViewState extends State<LoginView> {
       appBar: AppBar(
         title: const Text('Login'),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-          child: Column(
+      body: Padding(
+      padding: const EdgeInsets.all(8),
+        child: SingleChildScrollView(
+        child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset('assets/images/logo.png'),
@@ -109,7 +108,6 @@ class _LoginViewState extends State<LoginView> {
           ),
         ),
         ),
-    ),
     );
   }
 }

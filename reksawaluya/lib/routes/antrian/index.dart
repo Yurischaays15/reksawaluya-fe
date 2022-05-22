@@ -96,11 +96,13 @@ class _AntrianViewState extends State<AntrianView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Daftar Poliklinik'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12),
+        child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -108,6 +110,7 @@ class _AntrianViewState extends State<AntrianView> {
           ],
         ),
       ),
+    ),
     );
   }
 }
