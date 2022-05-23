@@ -11,7 +11,7 @@ class Network extends GetxController {
 
   Map<String, String> _networkHeader = {};
 
-  final baseUrl = 'http://192.168.100.29:8000';
+  final baseUrl = 'http://192.168.1.4:8000';
 
   _getHeader() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();

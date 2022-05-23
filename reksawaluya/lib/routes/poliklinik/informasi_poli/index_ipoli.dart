@@ -8,20 +8,21 @@ import 'package:reksawaluya/models/PoliklinikModel.dart';
 import 'package:reksawaluya/network/network.dart';
 import 'package:reksawaluya/routes/home/components/MenuBox/index.dart';
 import 'package:reksawaluya/routes/poliklinik/add_poli/AddPoli.dart';
-import 'package:reksawaluya/routes/poliklinik/detail_poli/index.dart';
+// import 'package:reksawaluya/routes/poliklinik/detail_poli/index.dart';
+import 'package:reksawaluya/routes/poliklinik/informasi_poli/index_detaili.dart';
 import 'package:reksawaluya/utils/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'menucomp.dart';
+import 'package:reksawaluya/routes/poliklinik/menucomp.dart';
 
-class PoliklinikView extends StatefulWidget {
-  const PoliklinikView({Key? key}) : super(key: key);
+class InfoPoliklinikView extends StatefulWidget {
+  const InfoPoliklinikView({Key? key}) : super(key: key);
 
   @override
-  _PoliklinikViewState createState() => _PoliklinikViewState();
+  _InfoPoliklinikViewState createState() => _InfoPoliklinikViewState();
 }
 
-class _PoliklinikViewState extends State<PoliklinikView> {
+class _InfoPoliklinikViewState extends State<InfoPoliklinikView> {
   final Network network = Get.find();
   List<PoliklinikModel> polis = [];
   bool isAdminOrPoli = false;
@@ -55,14 +56,14 @@ class _PoliklinikViewState extends State<PoliklinikView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MenuComp(
-                    destination: DetailPoliklinik(poliklinik: polis[i]),
+                    destination: InfoDetailPoliklinik(poliklinik: polis[i]),
                     text: polis[i].poliklinikName!,
                     img64: polis[i].poliklinikIcon!),
                 const SizedBox(
                   width: 20,
                 ),
                 MenuComp(
-                    destination: DetailPoliklinik(poliklinik: polis[i + 1]),
+                    destination: InfoDetailPoliklinik(poliklinik: polis[i + 1]),
                     text: polis[i + 1].poliklinikName!,
                     img64: polis[i + 1].poliklinikIcon!)
               ],
@@ -76,7 +77,7 @@ class _PoliklinikViewState extends State<PoliklinikView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MenuComp(
-                    destination: DetailPoliklinik(poliklinik: polis[i]),
+                    destination: InfoDetailPoliklinik(poliklinik: polis[i]),
                     text: polis[i].poliklinikName!,
                     img64: polis[i].poliklinikIcon!),
               ],
@@ -100,19 +101,19 @@ class _PoliklinikViewState extends State<PoliklinikView> {
       appBar: AppBar(
         title: const Text('Daftar Poliklinik'),
       ),
-      // floatingActionButton: isAdminOrPoli
-      //     ? FloatingActionButton(
-      //         onPressed: () async {
-      //           await Navigator.push(
-      //             context,
-      //             MaterialPageRoute(builder: (context) => const AddPoliView()),
-      //           );
-      //           _fetchPolis();
-      //         },
-      //         backgroundColor: Colors.green,
-      //         child: const Icon(Icons.add_outlined),
-      //       )
-          // : null,
+      floatingActionButton: isAdminOrPoli
+          ? FloatingActionButton(
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AddPoliView()),
+                );
+                _fetchPolis();
+              },
+              backgroundColor: Colors.cyanAccent,
+              child: const Icon(Icons.add_outlined),
+            )
+          : null,
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: SingleChildScrollView(

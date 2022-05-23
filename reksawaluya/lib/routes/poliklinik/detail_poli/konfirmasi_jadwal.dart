@@ -57,10 +57,7 @@ class _KonfirmasiJadwalViewState extends State<KonfirmasiJadwalView> {
     formattedTanggal = formatter.format(now);
     setState(() {});
   }
-  // kode_poli = d['kode_poli']
-  // tanggal = d['tanggal']
-  // hari = d['hari']
-  // jam =d['jam']
+
 
   _saveData() async {
     var payload = {

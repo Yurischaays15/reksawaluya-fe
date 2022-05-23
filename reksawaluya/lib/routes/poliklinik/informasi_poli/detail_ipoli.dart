@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:reksawaluya/models/PoliklinikModel.dart';
 import 'package:reksawaluya/routes/poliklinik/detail_poli/konfirmasi_jadwal.dart';
 
-class DetailJadwalView extends StatefulWidget {
+class InfoDetailJadwalView extends StatefulWidget {
   final String poliName;
   final Doctors schedules;
   final String poliKode;
 
-  const DetailJadwalView(
+  const InfoDetailJadwalView(
       {Key? key,
       required this.poliName,
       required this.schedules,
@@ -15,15 +15,15 @@ class DetailJadwalView extends StatefulWidget {
       : super(key: key);
 
   @override
-  _DetailJadwalViewState createState() => _DetailJadwalViewState();
+  _InfoDetailJadwalViewState createState() => _InfoDetailJadwalViewState();
 }
 
-class _DetailJadwalViewState extends State<DetailJadwalView> {
+class _InfoDetailJadwalViewState extends State<InfoDetailJadwalView> {
   List<Widget> widgets = [];
 
   _popList() {
     for (var sched in widget.schedules.schedule!) {
-      Widget v = Padding(
+      Widget hrPraktek = Padding(
           padding: const EdgeInsets.all(8),
           child: Container(
             decoration: BoxDecoration(
@@ -31,15 +31,15 @@ class _DetailJadwalViewState extends State<DetailJadwalView> {
                 border: Border.all(color: Colors.black45)),
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => KonfirmasiJadwalView(
-                        poliKode: widget.poliKode,
-                          poliName: widget.poliName,
-                          doctorName: widget.schedules.doctorName!,
-                          schedule: sched)),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) => KonfirmasiJadwalView(
+                //         poliKode: widget.poliKode,
+                //           poliName: widget.poliName,
+                //           doctorName: widget.schedules.doctorName!,
+                //           schedule: sched)),
+                // );
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -53,7 +53,7 @@ class _DetailJadwalViewState extends State<DetailJadwalView> {
               ),
             ),
           ));
-      widgets.add(v);
+      widgets.add(hrPraktek);
     }
     setState(() {});
   }

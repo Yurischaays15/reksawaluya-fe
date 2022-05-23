@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:reksawaluya/models/PoliklinikModel.dart';
 import 'package:reksawaluya/routes/poliklinik/add_poli/AddPoli.dart';
-import 'package:reksawaluya/routes/poliklinik/detail_poli/detailjadwal.dart';
+// import 'package:reksawaluya/routes/poliklinik/detail_poli/detailjadwal.dart';
+import 'package:reksawaluya/routes/poliklinik/informasi_poli/detail_ipoli.dart';
 import 'package:reksawaluya/utils/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class DetailPoliklinik extends StatefulWidget {
+class InfoDetailPoliklinik extends StatefulWidget {
   final PoliklinikModel poliklinik;
 
-  const DetailPoliklinik({Key? key, required this.poliklinik})
+  const InfoDetailPoliklinik({Key? key, required this.poliklinik})
       : super(key: key);
 
   @override
-  _DetailPoliklinikState createState() => _DetailPoliklinikState();
+  _InfoDetailPoliklinikState createState() => _InfoDetailPoliklinikState();
 }
 
-class _DetailPoliklinikState extends State<DetailPoliklinik> {
+class _InfoDetailPoliklinikState extends State<InfoDetailPoliklinik> {
   List<Widget> widgets = [];
   bool isAdminOrPoli = false;
 
@@ -27,16 +28,16 @@ class _DetailPoliklinikState extends State<DetailPoliklinik> {
     });
     for (var schedule in widget.poliklinik.doctors!) {
       List<Widget> details = [];
-      // for (var jdw in schedule.schedule!) {
-      //   Widget j = Row(
-      //     children: [
-      //       Text(jdw.date!),
-      //       Expanded(child: Container()),
-      //       Text(jdw.time!),
-      //     ],
-      //   );
-      //   details.add(j);
-      // }
+      for (var jdw in schedule.schedule!) {
+        Widget j = Row(
+          children: [
+            Text(jdw.date!),
+            Expanded(child: Container()),
+            Text(jdw.time!),
+          ],
+        );
+        details.add(j);
+      }
       Widget container = Padding(
           padding: const EdgeInsets.all(8),
           child: Container(
@@ -49,7 +50,7 @@ class _DetailPoliklinikState extends State<DetailPoliklinik> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => DetailJadwalView(
+                      builder: (context) => InfoDetailJadwalView(
                           poliKode: widget.poliklinik.poliklinikKode!,
                           poliName: widget.poliklinik.poliklinikName!,
                           schedules: schedule)),
@@ -72,7 +73,7 @@ class _DetailPoliklinikState extends State<DetailPoliklinik> {
               ),
             ),
           ));
-      // widgets.add(container);
+      widgets.add(container);
     }
     setState(() {
 
@@ -89,17 +90,17 @@ class _DetailPoliklinikState extends State<DetailPoliklinik> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(widget.poliklinik.poliklinikName!)),
-      // floatingActionButton: isAdminOrPoli ? FloatingActionButton(
-      //   onPressed: () async {
-      //     await Navigator.push(
-      //       context,
-      //       MaterialPageRoute(builder: (context) => AddPoliView(polinya: widget.poliklinik,)),
-      //     );
-      //     _populateList();
-      //   },
-      //   backgroundColor: Colors.green,
-      //   child: const Icon(Icons.add),
-      // ):null,
+      floatingActionButton: isAdminOrPoli ? FloatingActionButton(
+        onPressed: () async {
+          await Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddPoliView(polinya: widget.poliklinik,)),
+          );
+          _populateList();
+        },
+        backgroundColor: Colors.green,
+        child: const Icon(Icons.add),
+      ):null,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8),

@@ -92,10 +92,10 @@ class _AntrianPasienViewState extends State<AntrianPasienView> {
                   'Poli: ${widget.poliName}',
                   style: AllStyles.primaryBody,
                 ),
-                Text(
-                  'Hadir pada: ${hari != '' ? tanggalNow: ''}',
-                  style: AllStyles.primaryBody,
-                ),
+                // Text(
+                //   'Hadir pada: ${hari != '' ? tanggalNow: ''}',
+                //   style: AllStyles.primaryBody,
+                // ),
                 Text(
                   'Hari periksa: $hari',
                   style: AllStyles.primaryBody,
@@ -126,7 +126,7 @@ class _AntrianPasienViewState extends State<AntrianPasienView> {
                     child: Column(
                       children: [
                         Text(
-                          'POLI ${widget.poliName}\nAntrian',
+                          'POLI \n${widget.poliName}\nAntrian',
                           style: AllStyles.primaryMenu(),
                           textAlign: TextAlign.center,
                         ),
@@ -149,7 +149,7 @@ class _AntrianPasienViewState extends State<AntrianPasienView> {
                     child: Column(
                       children: [
                         Text(
-                          'Antrian Sekarang',
+                          'Antrian \nSekarang \n',
                           style: AllStyles.primaryMenu(),
                           textAlign: TextAlign.center,
                         ),

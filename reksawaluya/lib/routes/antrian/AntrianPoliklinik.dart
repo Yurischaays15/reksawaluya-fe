@@ -137,16 +137,16 @@ class _AntrianPoliklinikViewState extends State<AntrianPoliklinikView> {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: IconButton(onPressed: _reduceAntrian, icon: const Icon(Icons.skip_previous),  iconSize: 80),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: IconButton(onPressed: () {}, icon: const Icon(Icons.play_circle_fill),  iconSize: 80),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(8.0),
+                //   child: IconButton(onPressed: () {}, icon: const Icon(Icons.play_circle_fill),  iconSize: 80),
+                // ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: IconButton(onPressed: _addAntrian, icon: const Icon(Icons.skip_next), iconSize: 80,),

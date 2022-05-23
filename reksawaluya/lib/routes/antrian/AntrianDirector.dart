@@ -38,7 +38,7 @@ class _AntrianDirectorViewState extends State<AntrianDirectorView> {
   void initState() {
     super.initState();
     _popScreen();
-    print('im antrian director');
+    
   }
 
   @override
