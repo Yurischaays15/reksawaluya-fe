@@ -5,6 +5,7 @@ import 'package:reksawaluya/routes/data_pasien/index.dart';
 import 'package:reksawaluya/routes/home/components/MenuBox/index.dart';
 import 'package:reksawaluya/routes/pendaftaran/index.dart';
 import 'package:reksawaluya/routes/poliklinik/index.dart';
+import 'package:reksawaluya/routes/poliklinik/informasi_poli/index_ipoli.dart';
 
 class AdminView extends StatelessWidget {
   const AdminView({Key? key}) : super(key: key);
@@ -43,7 +44,7 @@ class AdminView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MenuBox(
-                destination: const PoliklinikView(),
+                destination: const InfoPoliklinikView(),
                   text: 'Informasi\nPoliklinik',
                   icon: LineIcon.hospital(
                     size: 60,

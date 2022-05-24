@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:reksawaluya/routes/home/components/MenuBox/index.dart';
 import 'package:reksawaluya/routes/antrian/index.dart';
-import 'package:reksawaluya/routes/poliklinik/index.dart' as p2;
+// import 'package:reksawaluya/routes/poliklinik/index.dart' as p2;
+import 'package:reksawaluya/routes/poliklinik/informasi_poli/index_ipoli.dart' as p2;
+
 
 class PoliklinikView extends StatelessWidget {
   const PoliklinikView({Key? key}) : super(key: key);
@@ -18,7 +20,7 @@ class PoliklinikView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               MenuBox(
-                destination: const p2.PoliklinikView(),
+                destination: const p2.InfoPoliklinikView(),
                   text: 'Informasi\nPoliklinik',
                   icon: LineIcon.hospital(
                     size: 60,
