@@ -23,6 +23,7 @@ class _LoginViewState extends State<LoginView> {
 
   _doLogin() async {
     var payload = {'email': email, 'password': password};
+    
     final result = await network.doPost('/user/token/', jsonEncode(payload));
     print(result.body);
     var d = jsonDecode(result.body);

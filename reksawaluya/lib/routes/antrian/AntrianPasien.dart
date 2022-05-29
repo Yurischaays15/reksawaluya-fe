@@ -36,6 +36,7 @@ class _AntrianPasienViewState extends State<AntrianPasienView> {
     var formatter = DateFormat('EEEE, dd MMMM yyyy');
     var now = DateTime.now();
     tanggalNow = formatter.format(now);
+    print(tanggalNow);
     setState(() {});
     var result = await network.doGet('/antrian/now/${widget.kodepoli}');
     print(result.body);
@@ -43,20 +44,27 @@ class _AntrianPasienViewState extends State<AntrianPasienView> {
     if (d['status'] == 'OK') {
       antrianNow = d['antrian'];
     }
-    setState(() {});
+    setState(() {
+      antrianNow;
+    });
 
-    result = await network.doGet(
+   var result1 = await network.doGet(
         '/pendaftaran/daftar/?tanggal=$tanggalNow&kodepoli=${widget.kodepoli}');
     SharedPreferences prefs = await SharedPreferences.getInstance();
     nama = prefs.getString(Constant.nameKey)!;
-    print(result.body);
-    d = jsonDecode(result.body);
+    print(result1.body);
+    d = jsonDecode(result1.body);
+    print(d);
     if (d['status'] == 'OK') {
       hari = d['hari'];
       pukul = d['jam'];
       antrianKita = d['antrian'];
     }
-    setState(() {});
+    setState(() {
+      hari;
+      pukul;
+      antrianKita;
+    });
   }
 
   @override
@@ -97,11 +105,11 @@ class _AntrianPasienViewState extends State<AntrianPasienView> {
                 //   style: AllStyles.primaryBody,
                 // ),
                 Text(
-                  'Hari periksa: $hari',
+                  'Hari periksa: ${hari}',
                   style: AllStyles.primaryBody,
                 ),
                 Text(
-                  'Pukul: $pukul',
+                  'Pukul: ${pukul}',
                   style: AllStyles.primaryBody,
                 ),
                 const SizedBox(

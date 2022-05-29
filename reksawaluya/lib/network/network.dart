@@ -1,7 +1,4 @@
-
-
 import 'dart:developer';
-
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 import 'package:reksawaluya/utils/constant.dart';
@@ -11,7 +8,8 @@ class Network extends GetxController {
 
   Map<String, String> _networkHeader = {};
 
-  final baseUrl = 'http://192.168.100.29:8000';
+  // final baseUrl = 'https://adminreksawaluya.my.id/admin/';
+  final baseUrl = 'https://adminreksawaluya.my.id/';
 
   _getHeader() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
