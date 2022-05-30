@@ -27,16 +27,16 @@ class _DetailPoliklinikState extends State<DetailPoliklinik> {
     });
     for (var schedule in widget.poliklinik.doctors!) {
       List<Widget> details = [];
-      // for (var jdw in schedule.schedule!) {
-      //   Widget j = Row(
-      //     children: [
-      //       Text(jdw.date!),
-      //       Expanded(child: Container()),
-      //       Text(jdw.time!),
-      //     ],
-      //   );
-      //   details.add(j);
-      // }
+      for (var jdw in schedule.schedule!) { //menampilkan detail poliklinik
+        Widget j = Row(
+          children: [
+            Text(jdw.date!),
+            Expanded(child: Container()),
+            Text(jdw.time!),
+          ],
+        );
+        details.add(j);
+      }
       Widget container = Padding(
           padding: const EdgeInsets.all(8),
           child: Container(
@@ -72,7 +72,7 @@ class _DetailPoliklinikState extends State<DetailPoliklinik> {
               ),
             ),
           ));
-      // widgets.add(container);
+      widgets.add(container); 
     }
     setState(() {
 
