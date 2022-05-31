@@ -39,7 +39,7 @@ class _PasienAdminDetailViewState extends State<PasienAdminDetailView> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Yakin mau dihapus?'),
+          title: const Text('apakah anda ingin menghapus data ini?'),
           actions: <Widget>[
             TextButton(
               child: const Text('Tidak'),
@@ -52,7 +52,7 @@ class _PasienAdminDetailViewState extends State<PasienAdminDetailView> {
               onPressed: () async {
                 await network.doGet('/pasien/delete/${widget.pasien.medicalRecord}');
                 ScaffoldMessenger.of(context)
-                    .showSnackBar(const SnackBar(content: Text('Data berhasil dihapus.')));
+                    .showSnackBar(const SnackBar(content: Text('Data berhasil dihapus!')));
                 Navigator.of(context).pop();
                 Navigator.of(context).pop();
               },
@@ -79,7 +79,7 @@ class _PasienAdminDetailViewState extends State<PasienAdminDetailView> {
     var d = jsonDecode(result.body);
     if (d['status'] == 'OK') {
       ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text('Data berhasil diubah.')));
+          .showSnackBar(const SnackBar(content: Text('Data berhasil diubah!')));
     } else {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(d['reason'])));

@@ -100,10 +100,10 @@ class _AntrianPasienViewState extends State<AntrianPasienView> {
                   'Poli: ${widget.poliName}',
                   style: AllStyles.primaryBody,
                 ),
-                // Text(
-                //   'Hadir pada: ${hari != '' ? tanggalNow: ''}',
-                //   style: AllStyles.primaryBody,
-                // ),
+                Text(
+                  'Hadir pada: ${hari != '' ? tanggalNow: ''}',
+                  style: AllStyles.primaryBody,
+                ),
                 Text(
                   'Hari periksa: ${hari}',
                   style: AllStyles.primaryBody,
@@ -124,6 +124,7 @@ class _AntrianPasienViewState extends State<AntrianPasienView> {
           Padding(
             padding: const EdgeInsets.all(8),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   decoration: BoxDecoration(
@@ -134,7 +135,7 @@ class _AntrianPasienViewState extends State<AntrianPasienView> {
                     child: Column(
                       children: [
                         Text(
-                          'POLI \n${widget.poliName}\nAntrian',
+                          'Poli \n${widget.poliName}\nAntrian',
                           style: AllStyles.primaryMenu(),
                           textAlign: TextAlign.center,
                         ),

@@ -32,7 +32,7 @@ class _DPPasienViewState extends State<DPPasienView> {
   ScreenshotController screenshotController = ScreenshotController();
 
   _downloadData() async {
-      Widget dila = Container(
+      Widget ckartu = Container(
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.only(left: 16, top: 8, right: 16, bottom: 8),
@@ -80,7 +80,7 @@ class _DPPasienViewState extends State<DPPasienView> {
         ),
       );
       screenshotController
-          .captureFromWidget(dila)
+          .captureFromWidget(ckartu)
           .then((capturedImage) async {
         Uint8List? theImage = capturedImage;
         final result = await ImageGallerySaver.saveImage(theImage);

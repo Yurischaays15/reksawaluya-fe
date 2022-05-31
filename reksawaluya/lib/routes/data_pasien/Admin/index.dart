@@ -67,13 +67,27 @@ class _DPAdminViewState extends State<DPAdminView> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
+    return Scaffold(
+      // floatingActionButton: FloatingActionButton(
+      //         onPressed: () async {
+      //           await Navigator.push(
+      //             context,
+      //             MaterialPageRoute(builder: (context) => const AddPasienView()),
+      //           );
+      //           _fetchPasiens();
+      //         },
+      //         backgroundColor: Colors.cyanAccent,
+      //         child: const Icon(Icons.add_outlined),
+      //       ),
+      body: SingleChildScrollView(
+      child: Column( 
         children: [
           const SizedBox(height: 10,),
-          ...childs
+          ...childs,
+                    
         ],
       ),
+    ),
     );
   }
 }

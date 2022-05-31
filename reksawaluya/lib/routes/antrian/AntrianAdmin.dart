@@ -41,7 +41,6 @@ class _AntrianAdminViewState extends State<AntrianAdminView> {
       antrianLatest = d['antrian'];
     }
     setState(() {
-
     });
   }
 
